@@ -4,7 +4,7 @@ ts_project(
     name = "lib",
     srcs = ["index.ts"],
     declaration = True,
+    transpiler = "tsc",
     tsconfig = "//:tsconfig",
     visibility = ["//visibility:public"],
-    transpiler = "tsc",
 )

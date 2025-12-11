@@ -5,17 +5,17 @@ ts_project(
     name = "lib",
     srcs = ["index.ts"],
     declaration = True,
+    transpiler = "tsc",
     tsconfig = "//:tsconfig",
     deps = ["//lib"],
-    transpiler = "tsc",
 )
 
 esbuild(
     name = "bundle",
-    entry_point = "index.js",
     srcs = [":lib"],
-    deps = ["//lib"],
     bundle = True,
+    entry_point = "index.js",
     minify = True,
     tsconfig = "//:tsconfig",
+    deps = ["//lib"],
 )
